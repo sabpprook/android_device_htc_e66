@@ -1,12 +1,16 @@
-/boot		emmc	/dev/block/platform/mtk-msdc.0/11230000.msdc0/by-name/boot
-/cache		ext4	/dev/block/platform/mtk-msdc.0/11230000.msdc0/by-name/cache
-/system		ext4	/dev/block/platform/mtk-msdc.0/11230000.msdc0/by-name/system
-/data		ext4	/dev/block/platform/mtk-msdc.0/11230000.msdc0/by-name/userdata		flags=encryptable=/dev/block/platform/mtk-msdc.0/11230000.msdc0/by-name/metadata
-/recovery 	emmc	/dev/block/platform/mtk-msdc.0/11230000.msdc0/by-name/recovery
-/misc		emmc	/dev/block/platform/mtk-msdc.0/11230000.msdc0/by-name/para
-/nvram		emmc	/dev/block/platform/mtk-msdc.0/11230000.msdc0/by-name/nvram		flags=display="IMEI/NVRAM"
-/preload	ext4	/dev/block/platform/mtk-msdc.0/11230000.msdc0/by-name/apppreload
+# mount point    fstype    device                              device2                              flags
+/system          ext4      /dev/block/platform/mtk-msdc.0/11230000.msdc0/by-name/system
+/system_image    emmc      /dev/block/platform/mtk-msdc.0/11230000.msdc0/by-name/system             flags=flashimg=1
+/data            ext4      /dev/block/platform/mtk-msdc.0/11230000.msdc0/by-name/userdata           flags=encryptable=/dev/block/platform/mtk-msdc.0/11230000.msdc0/by-name/metadata
+/cache           ext4      /dev/block/platform/mtk-msdc.0/11230000.msdc0/by-name/cache
+/boot		 emmc      /dev/block/platform/mtk-msdc.0/11230000.msdc0/by-name/boot
+/recovery        emmc      /dev/block/platform/mtk-msdc.0/11230000.msdc0/by-name/recovery           flags=backup=1
+/preload         ext4      /dev/block/platform/mtk-msdc.0/11230000.msdc0/by-name/apppreload
+/cota            ext4      /dev/block/platform/mtk-msdc.0/11230000.msdc0/by-name/cota
+/carrier         ext4      /dev/block/platform/mtk-msdc.0/11230000.msdc0/by-name/carrier
+/devlog          ext4      /dev/block/platform/mtk-msdc.0/11230000.msdc0/by-name/devlog
+/persist         ext4      /dev/block/platform/mtk-msdc.0/11230000.msdc0/by-name/persist
 
-# Removable storage
-/external_sd	vfat	/dev/block/mmcblk1p1	/dev/block/mmcblk1	flags=display="Micro SDcard";storage;wipeingui;removable
-/usb_otg	auto	/dev/block/sda1		/dev/block/sda		flags=display="USB-OTG";storage;wipeingui;removable
+#Removable Storage
+/external_sd     auto	    /dev/block/mmcblk1p1               /dev/block/mmcblk1	            flags=display="Micro SDcard";storage;wipeingui;removable
+/usb_otg         auto       /dev/block/sda1                    /dev/block/sda                       flags=display="USB-OTG";storage;wipeingui;removable
